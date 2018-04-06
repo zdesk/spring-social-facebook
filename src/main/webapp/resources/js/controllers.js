@@ -64,4 +64,10 @@ app.controller('AuthCtrl', function ($scope, $rootScope, $http, $cookies, TokenS
 			$scope.socialDetails = socialDetails;
 		});
 	};
+	
+	/*$scope.getGoogleDetails = function() {
+		$http.get('/admin/api/user').success(function (socialDetails) {
+			$scope.socialDetails = socialDetails;
+		});
+	};*/
 });
