@@ -15,8 +15,8 @@ public class FacebookController {
     @Autowired
     Facebook facebook;
     
-/*    @Autowired
-    Google google;*/
+    @Autowired
+    Google google;
 
     @RequestMapping(value = "/api/facebook/details", method = RequestMethod.GET)
     public User getFacebookDetails() {
@@ -24,8 +24,8 @@ public class FacebookController {
         return facebook.fetchObject("me", User.class, fields);
     }
     
-    /*@RequestMapping(value = "/api/google/details", method = RequestMethod.GET)
+    @RequestMapping(value = "/api/google/details", method = RequestMethod.GET)
     public GoogleUserInfo getGoogleDetails() {    	
         return google.userOperations().getUserInfo();
-    }*/
+    }
 }

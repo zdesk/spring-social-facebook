@@ -65,9 +65,9 @@ app.controller('AuthCtrl', function ($scope, $rootScope, $http, $cookies, TokenS
 		});
 	};
 	
-	/*$scope.getGoogleDetails = function() {
-		$http.get('/admin/api/user').success(function (socialDetails) {
+	$scope.getGoogleDetails = function() {
+		$http.get('/api/google/details').success(function (socialDetails) {
 			$scope.socialDetails = socialDetails;
 		});
-	};*/
+	};
 });

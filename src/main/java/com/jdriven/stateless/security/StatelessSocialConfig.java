@@ -23,6 +23,7 @@ import org.springframework.social.connect.UsersConnectionRepository;
 import org.springframework.social.facebook.api.Facebook;
 import org.springframework.social.facebook.connect.FacebookConnectionFactory;
 import org.springframework.social.google.connect.GoogleConnectionFactory;
+import org.springframework.social.google.api.Google;
 
 @Configuration
 @EnableSocial
@@ -88,6 +89,13 @@ public class StatelessSocialConfig extends SocialConfigurerAdapter {
 	@Scope(value = "request", proxyMode = ScopedProxyMode.INTERFACES)
 	public Facebook facebook(ConnectionRepository repository) {
 		Connection<Facebook> connection = repository.findPrimaryConnection(Facebook.class);
+		return connection != null ? connection.getApi() : null;
+	}
+	
+	@Bean
+	@Scope(value = "request", proxyMode = ScopedProxyMode.INTERFACES)
+	public Google google(ConnectionRepository repository) {
+		Connection<Google> connection = repository.findPrimaryConnection(Google.class);
 		return connection != null ? connection.getApi() : null;
 	}
 }
