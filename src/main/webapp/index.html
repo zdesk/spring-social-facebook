@@ -9,7 +9,7 @@
 <body ng-controller="AuthCtrl" ng-init="init()" style="padding: 10% 20%">
 	<div ng-hide="authenticated">
 		<a href="/auth/facebook?scope=public_profile"><button>Login with Facebook</button></a>
-		<a href="/auth/google?scope=profile"><button>Login with Google</button></a>
+		<a href="/auth/google?scope=profile email"><button>Login with Google</button></a>
 	</div>
 	<div ng-show="authenticated">
 		Logged in as {{username}} <button ng-click="logout()">Logout</button><br><br>
