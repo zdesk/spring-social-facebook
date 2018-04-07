@@ -57,6 +57,7 @@ public class InMemoryConnectionRepository implements ConnectionRepository {
 		return (List<Connection<A>>) providerConnections;
 	}
 
+	@SuppressWarnings("deprecation")
 	public MultiValueMap<String, Connection<?>> findConnectionsToUsers(MultiValueMap<String, String> providerUserIds) {
 		Assert.notEmpty(providerUserIds);
 		MultiValueMap<String, Connection<?>> connectionsToUsers = new LinkedMultiValueMap<String, Connection<?>>(providerUserIds.size());

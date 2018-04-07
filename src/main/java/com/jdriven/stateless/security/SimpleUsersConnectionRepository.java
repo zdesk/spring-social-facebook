@@ -61,7 +61,7 @@ public class SimpleUsersConnectionRepository implements UsersConnectionRepositor
                 user.getAccessToken(),
                 null, null, null);
 
-        final Connection connection = connectionFactoryLocator
+        final Connection<?> connection = connectionFactoryLocator
                 .getConnectionFactory(user.getProviderId()).createConnection(connectionData);
         connectionRepository.addConnection(connection);
         return connectionRepository;
